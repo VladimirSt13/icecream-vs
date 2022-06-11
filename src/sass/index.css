@@ -507,4 +507,58 @@ picture {
   height: 100%;
   overflow: hidden;
   border-radius: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .addresses-modal > details:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+.addresses-modal > details > address {
+  padding-left: 20px;
+  font-style: normal;
+  font-size: 12px;
+  font-weight: 500;
+}
+.addresses-modal > details[open] > summary {
+  color: #ecebeb;
+  padding-bottom: 10px;
+}
+.addresses-modal__button {
+  margin-left: 20px;
+  margin-bottom: 10px;
+  display: block;
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--focus-white-color);
+  cursor: pointer;
+}
+
+.arrow {
+  position: relative;
+  width: 7px;
+  height: 2px;
+  border-radius: 1px;
+  background-color: #d41443;
+  margin-left: auto;
+  margin-right: auto;
+}
+.arrow::after, .arrow::before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 2px;
+  right: -0.3px;
+  border-radius: 1px;
+  background-color: #d41443;
+}
+.arrow::before {
+  top: -1px;
+  transform: rotate(45deg);
+}
+.arrow::after {
+  top: 1px;
+  transform: rotate(-45deg);
 }/*# sourceMappingURL=index.css.map */
