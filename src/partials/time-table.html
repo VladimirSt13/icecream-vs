@@ -1,4 +1,4 @@
-<section class="contacts section">
+<section id="contacts" class="contacts section">
   <div class="contacts__container container">
     <h2 class="contacts__title visually-hidden">Contacts</h2>
     <div class="contacts__body">
@@ -124,30 +124,101 @@
   </div>
 </section>
 
-<!-- <div class="backdrop backdrop--is-hidden" data-modal-franchise>
-  <div class="modal">
+<div class="backdrop backdrop-location is-hidden js-location-modal">
+  <div class="modal modal-location">
+    <button type="button" class="close-button js-location-modal-close"></button>
+    <div class="modal-location__body">
+      <span class="modal-location__title">Location</span>
+      <address class="modal-location__address address-location">
+        <ul class="address-location__list">
+          <li class="address-location__item">
+            <p>UCLA Department or Residence Hal</p>
+          </li>
+          <li class="address-location__item"><p>5555 Campus Hall</p></li>
+          <li class="address-location__item"><p>Los Angeles, CA 90024</p></li>
+        </ul>
+      </address>
+    </div>
+    <div id="map" class="modal-location__map"></div>
+
+    <script>
+      function myMap() {
+        var mapCanvas = document.getElementById('map');
+        var mapOptions = {
+          center: new google.maps.LatLng(51.5, -0.2),
+          zoom: 10,
+        };
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+      }
+    </script>
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=&callback=myMap"
+      async
+      defer
+    ></script>
+  </div>
+</div>
+
+<div class="backdrop backdrop-franchise is-hidden js-franchise-modal">
+  <div class="modal-franchise">
     <button
       type="button"
-      class="modal__close-button"
-      data-close-modal-franchise
-    >
-      Закрыть
-    </button>
-    <strong class="modal__title">Our franchise</strong>
-    <p class="modal__text">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum aut
-      suscipit enim perspiciatis officiis tempora accusamus officia ipsum unde
-      maiores!
-    </p>
-    <p class="modal__text">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum aut
-      suscipit enim perspiciatis officiis tempora accusamus officia ipsum unde
-      maiores!
-    </p>
-    <p class="modal__text">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum aut
-      suscipit enim perspiciatis officiis tempora accusamus officia ipsum unde
-      maiores!
-    </p>
+      class="close-button js-franchise-modal-close"
+    ></button>
+    <div class="modal modal-franchise__container">
+      <strong class="modal-franchise__title"
+        >Request Franchise Information</strong
+      >
+
+      <form class="modal-franchise__form" autocomplete="off">
+        <div class="modal-franchise__base">
+          <div class="modal-franchise__full-name">
+            <label class="modal-franchise__field">
+              <span class="modal-franchise__label">First Name</span>
+              <input type="text" name="name" class="modal-franchise__input" />
+            </label>
+            <label class="modal-franchise__field">
+              <span class="modal-franchise__label">Last Name</span>
+              <input type="text" name="name" class="modal-franchise__input" />
+            </label>
+          </div>
+          <div class="modal-franchise__contacts-info">
+            <label class="modal-franchise__field">
+              <span class="modal-franchise__label">Phone number</span>
+              <input type="tel" name="text" class="modal-franchise__input" />
+            </label>
+            <label class="modal-franchise__field">
+              <span class="modal-franchise__label">E-Mail*</span>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                class="modal-franchise__input"
+              />
+            </label>
+          </div>
+
+          <label class="modal-franchise__field">
+            <span class="modal-franchise__label">Tell us about yourself</span>
+            <textarea
+              name="comment"
+              id="comment"
+              rows="10"
+              placeholder="Tell us about yourself"
+              class="modal-franchise__text-area"
+            ></textarea>
+          </label>
+        </div>
+
+        <button
+          type="submit"
+          class="button button--white modal-franchise__button"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+    <div class="modal-franchise__body"></div>
   </div>
-</div> -->
+</div>
