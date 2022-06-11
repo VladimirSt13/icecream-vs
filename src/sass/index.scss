@@ -1,3 +1,13 @@
-@import './common';
-@import './example';
-@import './contacts';
+@import './utils/global';
+@import './utils/variables';
+@import './components/header';
+@import './components/hero';
+@import './components/product';
+@import './components/prod-overlay';
+@import './components/how-it-made';
+@import './components/advantages';
+@import './components/gallery';
+@import './components/slider-reviys';
+@import './components/time-table';
+@import './components/footer';
+@import './components/modal-locations';

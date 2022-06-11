@@ -1,0 +1,47 @@
+<div class="backdrop backdrop-location js-location-modal">
+  <div class="modal-location">
+    <div class="modal-location__container">
+      <h2 class="modal-location__title">Locations</h2>
+      <button
+        type="button"
+        class="modal-location__close-button js-location-modal-close"
+      ></button>
+
+      <div class="modal-location__body">
+        <div class="modal-location__addresses">
+          <details>
+            <summary>Chicago</summary>
+            <a href=""><address>Address 1</address></a>
+          </details>
+          <details>
+            <summary>Los Adgeles</summary>
+            <a href=""><address>Address 1</address></a>
+          </details>
+          <details>
+            <summary>New York</summary>
+            <a href=""><address>Address 1</address></a>
+          </details>
+        </div>
+        <div id="map" class="modal-location__map"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- script for google map -->
+<script>
+  function myMap() {
+    var mapCanvas = document.getElementById('map');
+    var mapOptions = {
+      center: new google.maps.LatLng(51.5, -0.2),
+      zoom: 10,
+    };
+    var map = new google.maps.Map(mapCanvas, mapOptions);
+  }
+</script>
+
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=&callback=myMap"
+  async
+  defer
+></script>
+<!-- ======================== -->

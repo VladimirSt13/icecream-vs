@@ -1,0 +1,121 @@
+.noscroll {
+  overflow: hidden;
+}
+
+.backdrop-location {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition: opacity var(--main-transition);
+  // .backdrop--is-hidden
+  &.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+.modal-location {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 80%;
+  width: 80%;
+  transform: translate(-50%, -50%) scale(1);
+  background-color: #e17992;
+  border-radius: 30px;
+
+  &__container {
+    padding: 30px;
+    height: 100%;
+  }
+  &__close-button {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 15px;
+    height: 15px;
+    background: inherit;
+    border: none;
+
+    cursor: pointer;
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background-color: #fff;
+      left: 0;
+      top: 50%;
+      transition: background-color var(--main-transition);
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+
+    &:hover::after,
+    &:hover::before,
+    &:focus::after,
+    &:focus::before {
+      background-color: var(--pink-btn-hover);
+    }
+  }
+  &__body {
+    display: flex;
+    flex-direction: column;
+    height: 92%;
+    @media screen and(min-width:768px) {
+      flex-direction: row;
+    }
+  }
+  &__title {
+    display: block;
+    margin-bottom: 20px;
+
+    font-family: 'Titan One';
+    font-size: 20px;
+    line-height: 1.15;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--focus-white-color);
+  }
+  &__addresses {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.76;
+    letter-spacing: 0.04em;
+    color: var(--focus-white-color);
+    & > details > summary {
+      padding: 5px;
+      cursor: pointer;
+      //   list-style: none;
+    }
+    @media screen and(min-width:768px) {
+      flex: 0 0 250px;
+    }
+    @media screen and(max-width:767px) {
+      display: flex;
+      justify-content: space-around;
+      gap: 20px;
+    }
+  }
+  &__map {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+  }
+}
