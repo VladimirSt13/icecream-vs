@@ -1,0 +1,41 @@
+/* Слайдер */
+.slick-slider {
+  min-width: 0;
+}
+/* Ограничивающая оболочка */
+.slick-list {
+  overflow: hidden;
+}
+/* Лента слайдов */
+.slick-track {
+  display: flex;
+  align-items: flex-start;
+}
+/* Конкретный слайдер */
+.slider {
+  position: relative;
+}
+.slider .slick-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slider .slick-dots li {
+  list-style: none;
+  margin: 0px 18px;
+}
+.slider .slick-dots button {
+  font-size: 0;
+  width: 12px;
+  height: 12px;
+  background-color: #d9d9d9;
+  border-radius: 50%;
+}
+.slider .slick-dots li.slick-active button {
+  background-color: transparent;
+  border: none;
+  background-image: url(../images/slyder/home.svg);
+  border-radius: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+}

@@ -1,0 +1,167 @@
+.customer-reviews {
+  // .customer-reviews__container
+  &__container {
+    padding: 80px 20px 0;
+    @media screen and (max-width: 767px) {
+      width: 320px;
+    }
+  }
+  // .customer-reviews__rewiews
+  &__rewiews {
+  }
+  // .customer-reviews__review
+  &__review {
+  }
+}
+.review {
+  &__foto {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 32px;
+    @media screen and (min-width: 768px) {
+      margin-bottom: 20px;
+    }
+    @media screen and (min-width: 1280px) {
+      margin-bottom: 16px;
+    }
+  }
+  &__text-wrapper {
+    position: relative;
+    z-index: -1;
+    padding: 43px 58px 26px 65px;
+    margin-bottom: 48px;
+    background-color: #fafafa;
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
+      padding: 37px 55px 44px 50px;
+      margin-left: 54px;
+      margin-right: 54px;
+      margin-bottom: 24px;
+    }
+    @media screen and (min-width: 1280px) {
+      padding: 47px 142px 39px;
+      margin-left: 93px;
+      margin-right: 93px;
+    }
+  }
+  &__text {
+    position: relative;
+    z-index: 2;
+    font-size: 12px;
+    line-height: 2.55;
+    text-align: center;
+    @media screen and (min-width: 768px) {
+      font-size: 14px;
+      line-height: 2.16;
+      letter-spacing: 0.04em;
+    }
+    @media screen and (min-width: 1280px) {
+      font-size: 16px;
+      line-height: 1.86;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      left: -12px;
+      top: -13px;
+      width: 54px;
+      height: 40px;
+      background-image: url(../images/slyder/quotes.svg);
+      @media screen and (min-width: 768px) {
+        left: -40px;
+        top: -17px;
+      }
+      @media screen and (min-width: 1280px) {
+        left: -37px;
+        top: -15px;
+      }
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      left: -15px;
+      top: 29px;
+      width: 180px;
+      height: 219px;
+      background-image: repeating-linear-gradient(
+        to bottom,
+        #e1e1e1,
+        #e1e1e1 1px,
+        transparent 1px,
+        transparent 31px
+      );
+      @media screen and (min-width: 768px) {
+        left: -44px;
+        top: 31px;
+        width: 608px;
+        height: 60px;
+        background-image: repeating-linear-gradient(
+          to bottom,
+          #e1e1e1,
+          #e1e1e1 1px,
+          transparent 1px,
+          transparent 29px
+        );
+      }
+      @media screen and (min-width: 1280px) {
+        left: -36px;
+        top: 29px;
+        width: 821px;
+        height: 31px;
+        background-image: repeating-linear-gradient(
+          to bottom,
+          #e1e1e1,
+          #e1e1e1 1px,
+          transparent 1px,
+          transparent 30px
+        );
+      }
+    }
+  }
+  &__author {
+    position: relative;
+    font-size: 14px;
+    text-align: center;
+    @media screen and (min-width: 768px) {
+      font-size: 16px;
+      line-height: 1.86;
+      margin-bottom: 16px;
+    }
+    @media screen and (min-width: 1280px) {
+      font-size: 20px;
+    }
+    & span {
+      position: absolute;
+      display: block;
+      left: 50%;
+      top: -28px;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: var(--pink-btn-hover);
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 0;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: var(--pink-btn-hover);
+      }
+      &::before {
+        left: 14px;
+      }
+      &::after {
+        right: 14px;
+      }
+      @media screen and (min-width: 768px) {
+        top: -16px;
+      }
+    }
+  }
+}

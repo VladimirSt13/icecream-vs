@@ -1,0 +1,126 @@
+<section class="customer-reviews section">
+  <div class="customer-reviews__container container">
+    <h2 class="visually-hidden">Customer Reviews</h2>
+    <div class="customer-reviews__rewiews slider">
+      <div class="customer-reviews__review review">
+        <picture>
+          <source
+            srcset="
+              ./images/slyder/web/people-one-85-min.webp  1x,
+              ./images/slyder/web/people-one-170-min.webp 2x
+            "
+            type="image/webp"
+          />
+          <source
+            srcset="
+              ./images/slyder/people-one-85-min.jpg  1x,
+              ./images/slyder/people-one-170-min.jpg 2x
+            "
+            type="image/jpeg"
+          />
+          <img
+            src="./images/slyder/people-one-85-min.jpg"
+            alt="Foto Emily, Los Angeles"
+            width="85"
+            class="review__foto"
+          />
+        </picture>
+        <div class="review__text-wrapper">
+          <p class="review__text">
+            Nullam viverra consectetuer. Quisque cursus et, porttitor risus.
+            Aliquam sem. In hendrerit nulla quam nunc, accumsan congue. Lorem
+            ipsum primis in nibh vel risus.
+          </p>
+        </div>
+        <p class="review__author"><span></span>Emily, Los Angeles</p>
+      </div>
+      <div class="customer-reviews__review review">
+        <picture>
+          <source
+            srcset="
+              ./images/slyder/web/people-two-85-min.webp  1x,
+              ./images/slyder/web/people-two-170-min.webp 2x
+            "
+            type="image/webp"
+          />
+          <source
+            srcset="
+              ./images/slyder/people-two-85-min.jpg  1x,
+              ./images/slyder/people-two-170-min.jpg 2x
+            "
+            type="image/jpeg"
+          />
+          <img
+            src="./images/slyder/people-two-85-min.jpg"
+            alt="Foto Emily, Los Angeles"
+            width="85"
+            class="review__foto"
+          />
+        </picture>
+        <div class="review__text-wrapper">
+          <p class="review__text">
+            Nullam viverra consectetuer. Quisque cursus et, porttitor risus.
+            Aliquam sem. In hendrerit nulla quam nunc, accumsan congue. Lorem
+            ipsum primis in nibh vel risus.
+          </p>
+        </div>
+        <p class="review__author"><span></span>Ann, Chicago</p>
+      </div>
+      <div class="customer-review__review review">
+        <picture>
+          <source
+            srcset="
+              ./images/slyder/web/people-three-85-min.webp  1x,
+              ./images/slyder/web/people-three-170-min.webp 2x
+            "
+            type="image/webp"
+          />
+          <source
+            srcset="
+              ./images/slyder/people-three-85-min.jpg  1x,
+              ./images/slyder/people-three-170-min.jpg 2x
+            "
+            type="image/jpeg"
+          />
+          <img
+            src="./images/slyder/people-three-85-min.jpg"
+            alt="Foto Emily, Los Angeles"
+            width="85"
+            class="review__foto"
+          />
+        </picture>
+        <div class="review__text-wrapper">
+          <p class="review__text">
+            Nullam viverra consectetuer. Quisque cursus et, porttitor risus.
+            Aliquam sem. In hendrerit nulla quam nunc, accumsan congue. Lorem
+            ipsum primis in nibh vel risus.
+          </p>
+        </div>
+        <p class="review__author"><span></span>Pamela, New York</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script
+  type="text/javascript"
+  src="//code.jquery.com/jquery-1.11.0.min.js"
+></script>
+<script
+  type="text/javascript"
+  src="//code.jquery.com/jquery-migrate-1.2.1.min.js"
+></script>
+<script
+  type="text/javascript"
+  src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+></script>
+<script>
+  $('.slider').slick({
+    dots: true,
+    arrows: false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    adaptiveHeight: true,
+  });
+</script>
