@@ -18,6 +18,12 @@
     padding-bottom: 60px;
   }
 }
+.products-container {
+  @media screen and (min-width: 200px) and (max-width: 319px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
 
 .products-title-above {
   font-family: 'Titan One';
@@ -95,11 +101,9 @@
 }
 
 .products__item {
-  display: block;
-  border-radius: 24px;
-
+  position: relative;
   @media screen and (min-width: 200px) and (max-width: 319px) {
-    width: 160px;
+    min-width: 180px;
     height: 430px;
     margin-top: 100px;
     margin-right: auto;
@@ -118,7 +122,7 @@
     width: 224px;
     height: 473px;
     margin-top: 150px;
-    flex-basis: calc((100% - 3 * 16px) / 3);
+    flex-basis: calc((100% - 2 * 16px) / 3);
     &:not(:last-child) {
       margin-right: 16px;
       flex-wrap: wrap;
@@ -129,132 +133,79 @@
     margin-top: 250px;
     width: 395px;
     height: 535px;
-    flex-basis: calc((100% - 3 * 32px) / 3);
+    flex-basis: calc((100% - 2 * 16px) / 3);
+
     &:not(:last-child) {
       margin-right: 32px;
       flex-wrap: wrap;
     }
   }
 }
-
-.products__item-ice {
-  display: block;
-  background: var(--bcg-pink-color);
-  position: relative;
-}
-
-.products__item-ice::before {
+.products__item::before {
   content: '';
   display: block;
   position: absolute;
+  z-index: 1;
   background-repeat: no-repeat;
   background-size: contain;
-
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
   @media screen and (min-width: 200px) and (max-width: 319px) {
-    top: -100px;
-    width: 100%;
-    height: 100%;
+    width: 200px;
+    top: -120px;
+  }
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    top: -150px;
+  }
+  @media screen and (min-width: 768px) {
+    top: -150px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    top: -250px;
+  }
+}
+.products__item-ice::before {
+  @media screen and (min-width: 200px) and (max-width: 319px) {
     background-image: url(../images/products/ice-cream/ice-cream-mobail-249-min.png);
   }
   @media screen and (min-width: 320px) and (max-width: 767px) {
-    top: -150px;
-    width: 100%;
-    height: 100%;
     background-image: url(../images/products/ice-cream/ice-cream-mobail-498-min.png);
   }
   @media screen and (min-width: 768px) {
-    top: -150px;
-    width: 100%;
-    height: 100%;
     background-image: url(../images/products/ice-cream/ice-cream-tablet-440-min.png);
   }
-
   @media screen and (min-width: 1280px) {
-    top: -250px;
-    width: 100%;
-    height: 100%;
     background-image: url(../images/products/ice-cream/ice-cream-desctop-670-min.png);
   }
 }
-
-.products__item-coffee {
-  display: block;
-  background: #f0d1a5;
-  position: relative;
-}
-
 .products__item-coffee::before {
-  content: '';
-  display: block;
-  position: absolute;
-  background-repeat: no-repeat;
-  background-size: contain;
-
   @media screen and (min-width: 200px) and (max-width: 319px) {
-    top: -100px;
-    width: 100%;
-    height: 100%;
     background-image: url(../images/products/ice-coffee/ice-coffee-mobail-249-min.png);
   }
-
   @media screen and (min-width: 320px) and (max-width: 767px) {
-    top: -150px;
-    width: 100%;
-    height: 100%;
     background-image: url(../images/products/ice-coffee/ice-coffee-mobail-498-min.png);
   }
   @media screen and (min-width: 768px) {
-    top: -150px;
-    width: 100%;
-    height: 100%;
     background-image: url(../images/products/ice-coffee/ice-coffee-tablet-440-min.png);
   }
-
   @media screen and (min-width: 1280px) {
-    top: -250px;
-    width: 100%;
-    height: 100%;
     background-image: url(../images/products/ice-coffee/ice-coffee-desctop-674-min.png);
   }
 }
-
-.products__item-milkshake {
-  display: block;
-  background: #c2e297;
-  position: relative;
-}
-
 .products__item-milkshake::before {
-  content: '';
-  display: block;
-  position: absolute;
-  background-repeat: no-repeat;
-  background-size: contain;
-
   @media screen and (min-width: 200px) and (max-width: 319px) {
-    top: -100px;
-    width: 100%;
-    height: 100%;
     background-image: url(../images/products/millkshakes/milkshakes-mobail-249-min.png);
   }
-
   @media screen and (min-width: 320px) and (max-width: 767px) {
-    top: -150px;
-    width: 100%;
-    height: 100%;
     background-image: url(../images/products/millkshakes/milkshakes-mobail-498-min.png);
   }
   @media screen and (min-width: 768px) {
-    top: -150px;
-    width: 100%;
-    height: 100%;
     background-image: url(../images/products/millkshakes/milkshakes-tablet-440-min.png);
   }
-
   @media screen and (min-width: 1280px) {
-    top: -250px;
-    width: 100%;
-    height: 100%;
     background-image: url(../images/products/millkshakes/milkshakes-desctop-670-min.png);
   }
 }
@@ -272,24 +223,24 @@
   @media screen and (min-width: 200px) and (max-width: 319px) {
     font-size: 18px;
     line-height: 1.15;
-    padding-top: 80px;
+    // padding-top: 80px;
   }
 
   @media screen and (min-width: 320px) and (max-width: 767px) {
     font-size: 20px;
     line-height: 1.15;
-    padding-top: 160px;
+    // padding-top: 160px;
   }
   @media screen and (min-width: 768px) {
     font-size: 20px;
     line-height: 1.15;
-    padding-top: 118px;
+    // padding-top: 118px;
   }
 
   @media screen and (min-width: 1280px) {
     font-size: 30px;
     line-height: 1;
-    padding-top: 165px;
+    // padding-top: 165px;
   }
 }
 
@@ -304,8 +255,9 @@
   background-image: url(../images/products/dots.svg);
   width: 26px;
   height: 6px;
-  left: 45%;
-  bottom: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -32px;
 }
 
 .products-item-text {
@@ -345,6 +297,13 @@
 }
 
 .products-info-btn {
+  position: absolute;
+  bottom: 40px;
+  @media screen and (min-width: 1280px) {
+    bottom: 60px;
+  }
+  left: 50%;
+  transform: translateX(-50%);
   cursor: pointer;
   width: 40px;
   height: 40px;
@@ -370,30 +329,81 @@
   &:focus .products-icon {
     fill: var(--focus-white-color);
   }
+  &--rotated {
+    transform: rotate(180deg);
+    left: 43%;
+    transform: translateX(-50%);
+  }
 }
 
 .products-icon {
   fill: var(--focus-pinc-color);
 }
 
-.cards {
+.products-item-box {
+  position: relative;
+  padding: 10px;
+  width: 100%;
+  border-radius: 24px;
+  height: 430px;
+  padding: 100px 15px 15px 15px;
+  @media screen and (min-width: 200px) and (max-width: 319px) {
+    max-width: 300px;
+  }
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    // width: 280px;
+    height: 489px;
+    padding: 160px 40px 40px 40px;
+  }
+  @media screen and (min-width: 768px) {
+    // width: 224px;
+    height: 473px;
+    padding: 118px 32px 40px;
+  }
+  @media screen and (min-width: 1280px) {
+    // width: 395px;
+    height: 535px;
+    padding: 165px 75px 60px;
+  }
 }
+
+.card__touch {
+}
+
 .card {
   position: relative;
-  perspective: 1000;
-  // transform-style: preserve-3d;
-  transition: 1s;
+  perspective: 1000px;
 }
-.card:hover {
-  transform: rotateY(180deg);
+.card__bg--ice {
+  background: var(--bcg-pink-color);
 }
-.face,
+.card__bg--coffee {
+  background: #f0d1a5;
+}
+.card__bg--milkshake {
+  background: #c2e297;
+}
+
+.front,
 .back {
-  // position: absolute;
+  z-index: 9;
+  position: absolute;
   width: 100%;
+  height: 100px;
+
+  transition: 500ms;
   backface-visibility: hidden;
 }
+
 .back {
   transform: rotateY(180deg);
-  background-color: #fff;
+  &-box {
+    height: 100%;
+    background-color: #ffb8ca;
+    // padding: 44px;
+    border-radius: 24px;
+    // display: flex;
+    // flex-wrap: wrap;
+    // align-items: flex-end;
+  }
 }
