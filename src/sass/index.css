@@ -172,7 +172,6 @@ button {
 }
 
 .products__title {
-  z-index: 1;
   font-family: "Titan One";
   text-align: center;
   letter-spacing: 0.04em;
@@ -201,29 +200,15 @@ button {
   }
 }
 
-.products__list {
-  align-content: center;
-}
-@media screen and (min-width: 200px) and (max-width: 319px) {
-  .products__list {
-    display: block;
-  }
-}
-@media screen and (min-width: 320px) and (max-width: 767px) {
-  .products__list {
-    display: block;
-  }
-}
 @media screen and (min-width: 768px) {
   .products__list {
-    margin-right: -16px;
     display: flex;
+    gap: 16px;
   }
 }
 @media screen and (min-width: 1280px) {
   .products__list {
-    margin-right: -32px;
-    display: flex;
+    gap: 32px;
   }
 }
 
@@ -233,7 +218,6 @@ button {
 @media screen and (min-width: 200px) and (max-width: 319px) {
   .products__item {
     min-width: 180px;
-    height: 430px;
     margin-top: 100px;
     margin-right: auto;
     margin-left: auto;
@@ -242,7 +226,6 @@ button {
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .products__item {
     width: 280px;
-    height: 489px;
     margin-top: 150px;
     margin-right: auto;
     margin-left: auto;
@@ -250,26 +233,12 @@ button {
 }
 @media screen and (min-width: 768px) {
   .products__item {
-    width: 224px;
-    height: 473px;
     margin-top: 150px;
-    flex-basis: calc((100% - 32px) / 3);
-  }
-  .products__item:not(:last-child) {
-    margin-right: 16px;
-    flex-wrap: wrap;
   }
 }
 @media screen and (min-width: 1280px) {
   .products__item {
     margin-top: 250px;
-    width: 395px;
-    height: 535px;
-    flex-basis: calc((100% - 32px) / 3);
-  }
-  .products__item:not(:last-child) {
-    margin-right: 32px;
-    flex-wrap: wrap;
   }
 }
 
@@ -372,13 +341,15 @@ button {
 
 .products-item-title {
   position: relative;
+  z-index: 2;
   align-items: center;
-  font-family: "Titan One";
   text-align: center;
+  font-family: "Titan One";
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--focus-white-color);
   margin-bottom: 70px;
+  /* ice cream */
 }
 @media screen and (min-width: 200px) and (max-width: 319px) {
   .products-item-title {
@@ -422,7 +393,6 @@ button {
 }
 
 .products-item-text {
-  font-family: "DM Sans";
   text-align: center;
   letter-spacing: 0.04em;
   color: var(--focus-white-color);
@@ -462,10 +432,7 @@ button {
 }
 
 .products-info-btn {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
   cursor: pointer;
   width: 40px;
   height: 40px;
@@ -478,12 +445,7 @@ button {
   background-color: var(--focus-white-color);
   border-radius: 50%;
   border: 0.5px solid var(--focus-white-color);
-  transition: border var(--main-transition), background-color var(--main-transition);
-}
-@media screen and (min-width: 1280px) {
-  .products-info-btn {
-    bottom: 60px;
-  }
+  transition: border var(--main-transition), background-color var(--main-transition), transform var(--main-transition);
 }
 .products-info-btn:hover, .products-info-btn:focus {
   background-color: var(--focus-pinc-color);
@@ -492,10 +454,28 @@ button {
 .products-info-btn:hover .products-icon, .products-info-btn:focus .products-icon {
   fill: var(--focus-white-color);
 }
-.products-info-btn--rotated {
-  transform: rotate(180deg);
-  left: 43%;
-  transform: translateX(-50%);
+.products-item-box.js-overlay .products-info-btn {
+  z-index: 2;
+}
+@media screen and (min-width: 200px) and (max-width: 319px) {
+  .products-item-box.js-overlay .products-info-btn {
+    transform: translateX(100%) rotate(180deg);
+  }
+}
+@media screen and (min-width: 320px) {
+  .products-item-box.js-overlay .products-info-btn {
+    transform: translateX(230%) rotate(180deg);
+  }
+}
+@media screen and (min-width: 768px) {
+  .products-item-box.js-overlay .products-info-btn {
+    transform: translateX(150%) rotate(180deg);
+  }
+}
+@media screen and (min-width: 1280px) {
+  .products-item-box.js-overlay .products-info-btn {
+    transform: translateX(290%) rotate(180deg);
+  }
 }
 
 .products-icon {
@@ -504,11 +484,21 @@ button {
 
 .products-item-box {
   position: relative;
+  overflow: hidden;
   padding: 10px;
   width: 100%;
   border-radius: 24px;
-  height: 430px;
   padding: 100px 15px 15px 15px;
+  position: relative;
+}
+.products-item-box--ice {
+  background-color: var(--bcg-pink-color);
+}
+.products-item-box--coffee {
+  background-color: #f0d1a5;
+}
+.products-item-box--milkshake {
+  background-color: #c2e297;
 }
 @media screen and (min-width: 200px) and (max-width: 319px) {
   .products-item-box {
@@ -517,55 +507,54 @@ button {
 }
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .products-item-box {
-    height: 489px;
     padding: 160px 40px 40px 40px;
   }
 }
 @media screen and (min-width: 768px) {
   .products-item-box {
-    height: 473px;
     padding: 118px 32px 40px;
   }
 }
 @media screen and (min-width: 1280px) {
   .products-item-box {
-    height: 535px;
     padding: 165px 75px 60px;
   }
 }
 
-.card {
-  position: relative;
-  perspective: 1000px;
+.products__overlay-desc {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-101%);
+  transition: transform var(--main-transition);
+  padding: 190px 15px 15px 15px;
 }
-
-.card__bg--ice {
+.products__overlay-desc.transform {
+  transform: translateX(0%);
+}
+.products__overlay-desc--ice {
   background: var(--bcg-pink-color);
 }
-
-.card__bg--coffee {
+.products__overlay-desc--coffee {
   background: #f0d1a5;
 }
-
-.card__bg--milkshake {
+.products__overlay-desc--milkshake {
   background: #c2e297;
 }
-
-.front,
-.back {
-  z-index: 9;
-  position: absolute;
-  width: 100%;
-  height: 100px;
-  transition: 500ms;
-  backface-visibility: hidden;
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .products__overlay-desc {
+    padding: 252px 40px 40px 40px;
+  }
 }
-
-.back {
-  transform: rotateY(180deg);
+@media screen and (min-width: 768px) {
+  .products__overlay-desc {
+    padding: 211px 32px 40px;
+  }
 }
-.back-box {
-  height: 100%;
-  background-color: #ffb8ca;
-  border-radius: 24px;
+@media screen and (min-width: 1280px) {
+  .products__overlay-desc {
+    padding: 269px 75px 60px;
+  }
 }/*# sourceMappingURL=index.css.map */
