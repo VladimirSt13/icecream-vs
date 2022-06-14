@@ -3,10 +3,9 @@ const btn = document.querySelectorAll('.products-info-btn');
 let cards = null;
 let card = null;
 
-for (let i = 0; i < btn.length; i += 1) {
-  btn[i].addEventListener('click', event => {
+for (let i = 0; i < list.length; i += 1) {
+  list[i].addEventListener('click', event => {
     const clickFlip = event.target.closest('.card');
-    console.log('clickFlip  ', clickFlip);
     if (!clickFlip) {
       flipEnd();
       classRemove();
@@ -18,9 +17,9 @@ for (let i = 0; i < btn.length; i += 1) {
       return;
     }
 
-    const activeElement = document.querySelector('.js-flip');
+    const activElement = document.querySelector('.js-flip');
 
-    if (activeElement) {
+    if (activElement) {
       flipEnd();
       classRemove();
     }
@@ -30,18 +29,16 @@ for (let i = 0; i < btn.length; i += 1) {
 
     clickFlip.classList.add('js-flip');
     card[0].style.transform = 'rotateY(180deg)';
-    // console.log(cardHeight);
-
     card[1].style.transform = 'rotateY(360deg)';
+
+    function classRemove() {
+      cards.classList.remove('js-flip');
+    }
   });
 }
 
-function classRemove() {
-  cards.classList.remove('js-flip');
-}
-
 function flipEnd() {
-  card[0].style.transform = null;
-  card[1].style.transform = null;
+  card[0].style.transform = 'rotateY(0deg)';
+  card[1].style.transform = 'rotateY(180deg)';
   card[0].classList.remove('js-flip');
 }
