@@ -7,6 +7,7 @@ const cardHeight = document.querySelector('.card').offsetHeight + 'px';
 for (let i = 0; i < btn.length; i += 1) {
   btn[i].addEventListener('click', event => {
     const clickFlip = event.target.closest('.card');
+    console.log('clickFlip  ', clickFlip);
     if (!clickFlip) {
       flipEnd();
       classRemove();
@@ -30,17 +31,18 @@ for (let i = 0; i < btn.length; i += 1) {
 
     clickFlip.classList.add('js-flip');
     card[0].style.transform = 'rotateY(180deg)';
-    console.log(cardHeight);
+    // console.log(cardHeight);
 
     card[0].style.height = cardHeight;
+    card[1].style.height = cardHeight;
     card[1].style.transform = 'rotateY(360deg)';
   });
 }
 
 function classRemove() {
-  console.log(cards);
-  console.log(cards.children[1]);
-  cards.children[1].addEventListener('transitionend', console.log(111), false);
+  // console.log(cards);
+  // console.log(cards.children[1]);
+  // cards.children[1].addEventListener('transitionend', console.log(111), false);
   cards.classList.remove('js-flip');
 }
 
